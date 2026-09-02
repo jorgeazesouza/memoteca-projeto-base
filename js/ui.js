@@ -9,16 +9,22 @@ const ui = {
    },
 
    async renderizarPensamentos() {
-      const listaPensamentos = document.querySelector('#lista-pensamentos');
-      listaPensamentos.innerHTML = '';
+      const listaPensamentos = document.getElementById("lista-pensamentos")
+      const mensagemVazia = document.getElementById("mensagem-vazia");
+      listaPensamentos.innerHTML = ""
 
       try {
-         // armazenando arquivo JSON
-         const pensamentos = await api.buscarPensamentos();
-         // criando cada pensamento do JSON no html
-         pensamentos.forEach(ui.adicionarPensamentoNaLista);
-      } catch (error) {
-         alert('Erro ao renderizar pensamentos');
+         const pensamentos = await api.buscarPensamentos()
+         pensamentos.forEach(ui.adicionarPensamentoNaLista)
+         if (pensamentos.length === 0) {
+         mensagemVazia.style.display = "block";
+         } else {
+         mensagemVazia.style.display = "none";
+         pensamentos.forEach(ui.adicionarPensamentoNaLista)
+         }  
+      }
+      catch {
+         alert('Erro ao renderizar pensamentos')
       }
    },
 
