@@ -66,14 +66,9 @@
       "autoria": "Mãe"
     },
     {
-      "conteudo": "          Na minha máquina fuciona",
+      "conteudo": "Na minha máquina funciona",
       "autoria": "Dev",
-      "id": "KaLokXm9jFU"
-    },
-    {
-      "id": "KiFnwwB_0Z0",
-      "conteudo": "Na volta a gente compra! Mas não comprou!",
-      "autoria": "Mãe"
+      "id": "5NXDor0b_sw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

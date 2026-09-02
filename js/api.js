@@ -51,6 +51,17 @@ const api = {
          alert('Erro ao editar pensamentos.');
          throw error;
       }
+    },
+
+    async excluirPensamento(id) {
+      try {
+         const response = await fetch(`http://localhost:3000/pensamentos/${id}`, {
+            method: "DELETE", // excluir
+         });
+      } catch (error) {
+         alert('Erro ao excluir um pensamentos.');
+         throw error;
+      }
     }
 };
 
