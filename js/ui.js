@@ -39,6 +39,10 @@ const ui = {
       li.appendChild(pensamentoAutoria);
 
       listaPensamentos.appendChild(li);
+   },
+
+   limparFormulario() {
+      document.querySelector('#pensamento-form').reset();
    }
 };
 

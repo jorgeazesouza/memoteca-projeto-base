@@ -4,9 +4,12 @@ import api from './api.js';
 // adicionar um evento quando a página terminar de carregar
 document.addEventListener('DOMContentLoaded', () => {
    ui.renderizarPensamentos(); // renderizando pensamentos na pagina
-
+   
    const formularioPensamento = document.querySelector('#pensamento-form');
    formularioPensamento.addEventListener('submit', manipularSubmissaoFormulario);
+
+   const btnCancelar = document.querySelector('#botao-cancelar');
+   btnCancelar.addEventListener('click', manipularCancelamento);
 });
 
 async function manipularSubmissaoFormulario(event) {
@@ -19,6 +22,10 @@ async function manipularSubmissaoFormulario(event) {
       await api.salvarPensamento({ conteudo, autoria });
       ui.renderizarPensamentos();
    } catch (error) {
-      alert('Erro ao salvar pensamentos');
+      alert('Erro ao adicionar pensamentos');
    }
+}
+
+function manipularCancelamento() {
+   ui.limparFormulario();
 }
