@@ -28,6 +28,7 @@ async function manipularSubmissaoFormulario(event) {
    } catch (error) {
       alert('Erro ao adicionar pensamentos');
    }
+   ui.limparFormulario();
 }
 
 function manipularCancelamento() {
